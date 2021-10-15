@@ -1,5 +1,5 @@
 #include "anomaly_detection_util.h"
-#include <math.h>
+#include <cmath>
 
 float avg(float* x, int size){
     float total = 0;
@@ -50,5 +50,5 @@ float dev(Point p, Point** points, int size){
 }
 
 float dev(Point p,Line l){
-    return fabs(l.f(p.x) - p.y);
+    return std::abs(l.f(p.x) - p.y);
 }
