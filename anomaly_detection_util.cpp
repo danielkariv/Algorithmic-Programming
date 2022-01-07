@@ -1,8 +1,3 @@
-/*
- * animaly_detection_util.cpp
- *
- * Author: write your ID and name here [TODO: Change when submit]
- */
 
 #include "anomaly_detection_util.h"
 #include <cmath>
