@@ -21,7 +21,7 @@ struct correlatedFeatures{
 class SimpleAnomalyDetector:public TimeSeriesAnomalyDetector{
 protected:
 	vector<correlatedFeatures> cf;
-    const float minThreshold = 0.9;
+    float minThreshold = 0.9;
 public:
 	SimpleAnomalyDetector();
 	virtual ~SimpleAnomalyDetector();
@@ -36,6 +36,9 @@ public:
     virtual void learnHelper(const TimeSeries& ts,int first, int second, float correlation, Point** points);
     virtual bool isAnomaly(float firstValue, float secondValue,correlatedFeatures c);
     float findThreshold(Point** points,int rowCount, correlatedFeatures cf);
+    void setMinThreshold(float minThreshold){
+        this->minThreshold = minThreshold;
+    }
 };
 
 
