@@ -5,7 +5,7 @@
 
 #include<iostream>
 #include <string.h>
-
+#include <math.h>
 #include <fstream>
 #include <vector>
 #include "HybridAnomalyDetector.h"
@@ -253,8 +253,8 @@ public:
         // calculate the rates.
         float N= sharedinfo->testRowCount - sum;
         // Note: the tester seems to want up to 3 digits after dot, so I clamp it using int, and 1000.0f
-        float tpr=((int)(1000.0*TP/P))/1000.0f;
-        float fpr=((int)(1000.0*FP/N))/1000.0f;
+        float tpr=(int)((1000.0f*TP)/P)/1000.0f;
+        float fpr=(int)((1000.0f*FP)/N)/1000.0f;
         dio->write("True Positive Rate: ");
         dio->write(tpr);
         dio->write("\nFalse Positive Rate: ");

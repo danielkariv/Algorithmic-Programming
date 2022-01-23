@@ -30,7 +30,7 @@ void CLI::start(){
         // offset first char in input string by value of char '1'.
         // will return values between 0-5 for input '1'-'6'.
         option = input[0]-'1';
-        if (0<= option && 6 >= option){
+        if (0<= option && 5 >= option){
             // need to see how to deliver info in or out.
             commands[option]->execute(&shared);
         }
